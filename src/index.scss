@@ -1,0 +1,64 @@
+$blue: #1875e7;
+$white: #ffffff;
+$dark: #030303;
+$side: left;
+$grey: #929292;
+$green: #49e032;
+$red: #ff3a3a;
+@mixin left($value: 10px) {
+    float: left;
+    margin-left: $value;
+}
+
+@mixin rounded($vert, $horz, $radius: 10px) {
+    border-#{$vert}-#{$horz}-radius: $radius;
+    -moz-border-radius-#{$vert}#{$horz}: $radius;
+    -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+@for $i from 1 to 10 {
+    .border-#{$i} {
+        border: #{$i}px solid blue;
+    }
+}
+
+@for $i from 1 to 10 {
+    .border-#{$i*5} {
+        border: #{$i*5}px solid blue;
+    }
+}
+
+.todo-body {
+    ol {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 0;
+        li {
+            width: 100%;
+            padding: 10px 0;
+            margin: 20px 0;
+            background-color: $white;
+            color: $grey;
+            border-bottom: 1px solid $grey;
+            transition: all .3s;
+            .item-status {
+                float: left;
+                color: $red;
+                &.finished {
+                    color: $green;
+                }
+            }
+            .item-btn-group {
+                float: right;
+            }
+        }
+    }
+}
+
+button {
+    cursor: pointer;
+    &+button{
+        margin-left: 5px;
+    }
+}
