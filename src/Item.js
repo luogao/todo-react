@@ -64,13 +64,17 @@ class Item extends React.Component {
                         <button onClick={this.editItem}>编辑</button>
                         <button onClick={this.deleteItem}>删除</button>
                     </div>
+                    <div className="clearfix"></div>
                 </li>
             )
         } else {
             return (
                 <li>
                     <input ref='editInput' type="text" defaultValue={this.props.title}/>
-                    <button onClick={this.updateItem}>完成</button>
+                    <div className="item-btn-group">
+                        <button onClick={this.updateItem}>完成</button>
+                        <button onClick={this.deleteItem}>删除</button>
+                    </div>
                 </li>
             )
         }

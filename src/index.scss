@@ -45,6 +45,7 @@ $red: #ff3a3a;
             .item-status {
                 float: left;
                 color: $red;
+                font-size: 12px;
                 &.finished {
                     color: $green;
                 }
@@ -58,7 +59,16 @@ $red: #ff3a3a;
 
 button {
     cursor: pointer;
-    &+button{
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .2);
+    background: #505050;
+    color: #fff;
+    padding: 5px;
+    &+button {
         margin-left: 5px;
     }
+}
+.clearfix{
+    clear: both;
 }
