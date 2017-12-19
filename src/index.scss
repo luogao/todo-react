@@ -30,10 +30,9 @@ $red: #ff3a3a;
 
 .todo-body {
     ol {
-        width: 500px;
-        margin: 0 auto;
+        width: 100%;
+        padding: 0 50px;
         margin-top: 10px;
-        padding: 0;
         li {
             width: 100%;
             padding: 10px 0;
@@ -42,6 +41,7 @@ $red: #ff3a3a;
             color: $grey;
             border-bottom: 1px solid $grey;
             transition: all .3s;
+            animation: fadeInDown .3s;
             .item-status {
                 float: left;
                 color: $red;
@@ -69,6 +69,18 @@ button {
         margin-left: 5px;
     }
 }
-.clearfix{
+
+.clearfix {
     clear: both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
